@@ -1,4 +1,4 @@
-POST http://localhost:3000/producto/agregarproducto HTTP/1.1
+POST http://localhost:3306/producto/agregarproducto HTTP/1.1
 Content-Type: application/json
 
 {
@@ -7,7 +7,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/producto/eliminarproducto HTTP/1.1
+DELETE http://localhost:3306/Producto/eliminarproducto HTTP/1.1
 Content-Type: application/json
 
 {

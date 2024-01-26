@@ -1,17 +1,21 @@
 import { Sequelize } from "sequelize-typescript";
 import dotenv  from "dotenv"; 
+import Producto from '../Producto/Infraestructura/models/Producto.model';
+import vendedor from "../Vendedor/Infraestructura/models/Vendedor.model";
 
 dotenv.config();
 
 export const sequelize = new Sequelize ({
-    host:process.env.HOST,
+    dialect:"mysql",
     database:process.env.DATABASE,
     username:process.env.USERNAME,
     password:process.env.PASSWORD,
-    port:3000
+    host:process.env.HOST,
+    port:3306,
+    models:[Producto,vendedor]
 });
 
-export async function InicializarServidor(){
+export async function InicializarBaseDatos(){
 
 try {
     console.log(process.env.HOST)

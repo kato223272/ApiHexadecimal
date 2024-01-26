@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteVendedorController = exports.deleteVendedorCasoUso = exports.addVendedorController = exports.addVendedorCasoUso = exports.sqlVendedorRepositorio = void 0;
+const sqlVendedorRepositorio_1 = require("./sqlVendedorRepositorio");
+const AddVendedorCaseUse_1 = require("../Aplicacion/AddVendedorCaseUse");
+const addVendedorController_1 = require("./controller/addVendedorController");
+const deleteVendedorCaseUse_1 = require("../Aplicacion/deleteVendedorCaseUse");
+const deleteVendedorController_1 = require("./controller/deleteVendedorController");
+exports.sqlVendedorRepositorio = new sqlVendedorRepositorio_1.SqlVendedorRepositorio();
+exports.addVendedorCasoUso = new AddVendedorCaseUse_1.AddVendedorCaseUse(exports.sqlVendedorRepositorio);
+exports.addVendedorController = new addVendedorController_1.AddVendedorController(exports.addVendedorCasoUso);
+exports.deleteVendedorCasoUso = new deleteVendedorCaseUse_1.DeleteVendedorCaseUse(exports.sqlVendedorRepositorio);
+exports.deleteVendedorController = new deleteVendedorController_1.DeleteVendedorController(exports.deleteVendedorCasoUso);
