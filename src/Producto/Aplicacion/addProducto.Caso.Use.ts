@@ -5,9 +5,9 @@ export class AddProductoCaseUse{
 
    constructor(readonly ProductoRepositorio: ProductoRepositorio){}
 
-   async run(id_Producto: number, nombre_Producto: string, numeroTel_Producto: number ):Promise<Producto | null>{
+   async run(id_Producto: number, nombre_Producto: string, precio_Producto: number ):Promise<Producto | null>{
        try {
-           const addProducto=await this.ProductoRepositorio.addProducto(id_Producto, nombre_Producto, numeroTel_Producto)
+           const addProducto=await this.ProductoRepositorio.addProducto(id_Producto, nombre_Producto, precio_Producto)
            return addProducto
            
        } catch (error) {

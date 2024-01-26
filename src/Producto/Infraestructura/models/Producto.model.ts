@@ -19,7 +19,7 @@ class Producto extends Model{
 @Column({
     type: DataType.FLOAT,
     primaryKey: false
-})  public precio_producto!: number;
+})  public precio_Producto!: number;
 
 }
 export default Producto;

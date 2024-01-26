@@ -15,31 +15,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InicializarBaseDatos = exports.sequelize = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
 const dotenv_1 = __importDefault(require("dotenv"));
-const Producto_model_1 = __importDefault(require("../Producto/Infraestructura/models/Producto.model"));
-const Vendedor_model_1 = __importDefault(require("../Vendedor/Infraestructura/models/Vendedor.model"));
 dotenv_1.default.config();
 exports.sequelize = new sequelize_typescript_1.Sequelize({
     dialect: "mysql",
-    database: process.env.DATABASE,
-    username: process.env.USERNAME,
+    database: process.env.DB,
+    username: process.env.USER,
     password: process.env.PASSWORD,
     host: process.env.HOST,
-    port: 3306,
-    models: [Producto_model_1.default, Vendedor_model_1.default]
+    port: 3306
 });
 function InicializarBaseDatos() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            console.log(process.env.HOST);
             yield exports.sequelize.authenticate();
-            console.log("se logró conectar a la base de datos");
+            console.log("Conexión lograda");
             yield exports.sequelize.sync({ force: false });
         }
         catch (error) {
-            console.log("error al conectar la base de datos", error);
-            process.exit(1);
+            console.log("No se puede conectar a la base de datos", error);
         }
     });
 }
 exports.InicializarBaseDatos = InicializarBaseDatos;
-;

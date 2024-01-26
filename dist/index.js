@@ -20,17 +20,17 @@ const signale = new signale_1.Signale();
 app.use(express_1.default.json());
 // app.use('/Vendedor',vendedorRouter);
 // app.use('/Producto', ProductoRouter);
-function inicializarServidor() {
+function iniciarServidor() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             yield (0, Base_1.InicializarBaseDatos)();
             app.listen(3000, () => {
-                signale.success("El servidor está corriendo en el puerto 3000");
+                signale.success("Servidor corriendo en el puerto 3000");
             });
         }
         catch (error) {
-            signale.error("Se produjo un error al inicializar el servidor", error);
+            signale.error("Error al iniciar el servidor", error);
         }
     });
 }
-inicializarServidor();
+iniciarServidor();
