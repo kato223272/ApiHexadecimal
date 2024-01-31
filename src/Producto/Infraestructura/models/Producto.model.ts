@@ -10,12 +10,12 @@ class Producto extends Model{
 @Column({
     type: DataType.INTEGER,
     primaryKey: true
-}) public id_producto!: number;
+}) public id_Producto!: number;
 
 @Column({
     type: DataType.STRING,
     primaryKey: false
-}) public nombre_producto!: string;
+}) public nombre_Producto!: string;
 @Column({
     type: DataType.FLOAT,
     primaryKey: false

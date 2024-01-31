@@ -1,8 +1,8 @@
 export class Producto{
 
 constructor(
-    readonly id_producto:number,
-    readonly nombre_producto:string,
-    readonly precio_producto:number
+    readonly id_Producto:number,
+    readonly nombre_Producto:string,
+    readonly precio_Producto:number
 ){}
 }

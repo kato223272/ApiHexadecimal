@@ -6,9 +6,9 @@ export class SqlProductoRepositorio implements ProductoRepositorio{
     async addProducto(id_Producto: number, nombre_Producto: string, precio_Producto: number): Promise<Producto | null> {
         try {
             const ProductoCreado = await ProductoModelo.create({id_Producto, nombre_Producto, precio_Producto})
-            return new Producto(ProductoCreado.id_producto, ProductoCreado.nombre_producto, ProductoCreado.precio_Producto);
+            return new Producto(ProductoCreado.id_Producto, ProductoCreado.nombre_Producto, ProductoCreado.precio_Producto);
         } catch (error) {
-            console.log("Error en sqlProducto.repositorio en add");
+            console.log("Error en sqlProducto.repositorio en add", error);
             return null;
         }
     }
@@ -17,7 +17,7 @@ export class SqlProductoRepositorio implements ProductoRepositorio{
         const ProductoEliminado = await ProductoModelo.findOne({where: {id_Producto: id_Producto}});
         if (ProductoEliminado) {
             await ProductoEliminado.destroy();
-            return new Producto(ProductoEliminado.id_producto, ProductoEliminado.nombre_producto, ProductoEliminado.precio_Producto)
+            return new Producto(ProductoEliminado.id_Producto, ProductoEliminado.nombre_Producto, ProductoEliminado.precio_Producto)
         }else{
             return null;
         }

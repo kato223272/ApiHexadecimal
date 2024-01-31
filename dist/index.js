@@ -14,22 +14,29 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const signale_1 = require("signale");
+const VendedorRoutes_1 = require("./Vendedor/Infraestructura/VendedorRoutes");
+const Producto_routes_1 = require("./Producto/Infraestructura/Producto.routes");
 const Base_1 = require("./Conexion/Base");
+const options = {
+    secrets: ["([0-9]{4}-?)+"]
+};
+let example = (0, express_1.default)();
+example.disable("x-powered-by");
+const logger = new signale_1.Signale(options);
 const app = (0, express_1.default)();
-const signale = new signale_1.Signale();
 app.use(express_1.default.json());
-// app.use('/Vendedor',vendedorRouter);
-// app.use('/Producto', ProductoRouter);
+app.use('/Vendedor', VendedorRoutes_1.vendedorRouter);
+app.use('/Producto', Producto_routes_1.ProductoRouter);
 function iniciarServidor() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             yield (0, Base_1.InicializarBaseDatos)();
             app.listen(3000, () => {
-                signale.success("Servidor corriendo en el puerto 3000");
+                logger.success("Servidor corriendo en el puerto 3000");
             });
         }
         catch (error) {
-            signale.error("Error al iniciar el servidor", error);
+            logger.error("Error al iniciar el servidor", error);
         }
     });
 }

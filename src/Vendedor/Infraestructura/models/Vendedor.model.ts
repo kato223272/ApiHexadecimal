@@ -21,5 +21,6 @@ class vendedor extends Model{
     primaryKey: false
 }) public numeroTel_vendedor!: number;
 
+
 }
 export default vendedor;

@@ -14,10 +14,10 @@ class AddProductoCaseUse {
     constructor(ProductoRepositorio) {
         this.ProductoRepositorio = ProductoRepositorio;
     }
-    run(id_Producto, nombre_Producto, numeroTel_Producto) {
+    run(id_Producto, nombre_Producto, precio_Producto) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const addProducto = yield this.ProductoRepositorio.addProducto(id_Producto, nombre_Producto, numeroTel_Producto);
+                const addProducto = yield this.ProductoRepositorio.addProducto(id_Producto, nombre_Producto, precio_Producto);
                 return addProducto;
             }
             catch (error) {

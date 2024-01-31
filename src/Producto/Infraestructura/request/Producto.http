@@ -1,10 +1,11 @@
-POST http://localhost:3000/producto/agregarProducto HTTP/1.1
+###
+POST http://localhost:3000/Producto/agregarProducto HTTP/1.1
 Content-Type: application/json
 
 {
-    "id_producto":223272,
-    "nombre":"Kato",
-    "precio_Producto":635
+    "id_Producto":223726,
+    "nombre_Producto":"Paola",
+    "precio_Producto":2828
 }
 
 ###
@@ -12,5 +13,5 @@ DELETE http://localhost:3306/Producto/eliminarproducto HTTP/1.1
 Content-Type: application/json
 
 {
-    "id_producto":223272
+    "id_Producto":223272
 }

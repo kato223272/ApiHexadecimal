@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/index.js",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "sonar": "sonar-scanner"
   },
   "author": "",
   "license": "ISC",
@@ -14,18 +15,17 @@
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.7",
     "@types/nodemon": "^1.19.6",
-    "dotenv": "^16.4.0",
+    "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "mysql2": "^3.8.0",
     "node": "^21.6.1",
     "nodemon": "^3.0.3",
-    "sequelize": "^6.35.2",
     "sequelize-typescript": "^2.1.6",
     "signale": "^1.4.0",
-    "typescript": "^5.3.3",
-    "uninstall": "^0.0.0"
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@types/signale": "^1.4.7"
+    "@types/signale": "^1.4.7",
+    "sonarqube-scanner": "^3.3.0"
   }
 }

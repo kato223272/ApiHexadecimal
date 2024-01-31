@@ -16,14 +16,14 @@ exports.SqlProductoRepositorio = void 0;
 const Producto_1 = require("../Dominio/Producto");
 const Producto_model_1 = __importDefault(require("./models/Producto.model"));
 class SqlProductoRepositorio {
-    addProducto(id_Producto, nombre_Producto, precio_producto) {
+    addProducto(id_Producto, nombre_Producto, precio_Producto) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const ProductoCreado = yield Producto_model_1.default.create({ id_Producto, nombre_Producto, precio_producto });
-                return new Producto_1.Producto(ProductoCreado.id_producto, ProductoCreado.nombre_producto, ProductoCreado.precio_producto);
+                const ProductoCreado = yield Producto_model_1.default.create({ id_Producto, nombre_Producto, precio_Producto });
+                return new Producto_1.Producto(ProductoCreado.id_Producto, ProductoCreado.nombre_Producto, ProductoCreado.precio_Producto);
             }
             catch (error) {
-                console.log("Error en sqlProducto.repositorio en add");
+                console.log("Error en sqlProducto.repositorio en add", error);
                 return null;
             }
         });
@@ -34,7 +34,7 @@ class SqlProductoRepositorio {
                 const ProductoEliminado = yield Producto_model_1.default.findOne({ where: { id_Producto: id_Producto } });
                 if (ProductoEliminado) {
                     yield ProductoEliminado.destroy();
-                    return new Producto_1.Producto(ProductoEliminado.id, ProductoEliminado.nombre_producto, ProductoEliminado.precio_producto);
+                    return new Producto_1.Producto(ProductoEliminado.id_Producto, ProductoEliminado.nombre_Producto, ProductoEliminado.precio_Producto);
                 }
                 else {
                     return null;

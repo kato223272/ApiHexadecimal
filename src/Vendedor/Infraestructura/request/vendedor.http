@@ -2,8 +2,9 @@ POST http://localhost:3000/vendedor/agregarVendedor HTTP/1.1
 Content-Type: application/json
 
 {
-    "id_vendedor":223272,
-    "nombre":"Kato"
+    "id_Vendedor":223272,
+    "nombre_vendedor":"Kato",
+    "numeroTel_vendedor":123
 }
 
 ###
@@ -11,5 +12,5 @@ DELETE http://localhost:3000/vendedor/eliminarVendedor HTTP/1.1
 Content-Type: application/json
 
 {
-    "id_vendedor":223272
+    "id_Vendedor":223272
 }

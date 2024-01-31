@@ -15,6 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InicializarBaseDatos = exports.sequelize = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
 const dotenv_1 = __importDefault(require("dotenv"));
+const Producto_model_1 = __importDefault(require("../Producto/Infraestructura/models/Producto.model"));
+const Vendedor_model_1 = __importDefault(require("../Vendedor/Infraestructura/models/Vendedor.model"));
 dotenv_1.default.config();
 exports.sequelize = new sequelize_typescript_1.Sequelize({
     dialect: "mysql",
@@ -22,7 +24,8 @@ exports.sequelize = new sequelize_typescript_1.Sequelize({
     username: process.env.USER,
     password: process.env.PASSWORD,
     host: process.env.HOST,
-    port: 3306
+    port: 3306,
+    models: [Producto_model_1.default, Vendedor_model_1.default]
 });
 function InicializarBaseDatos() {
     return __awaiter(this, void 0, void 0, function* () {

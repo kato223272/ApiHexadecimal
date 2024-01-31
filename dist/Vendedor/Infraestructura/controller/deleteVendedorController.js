@@ -17,9 +17,9 @@ class DeleteVendedorController {
     run(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                let id_vendedor = req.body.id_vendedor;
+                let id_Vendedor = req.body.id_Vendedor;
                 console.log(req.body);
-                let vendedorEliminado = yield this.deleteVendedorCaseUse.run(id_vendedor);
+                let vendedorEliminado = yield this.deleteVendedorCaseUse.run(id_Vendedor);
                 if (vendedorEliminado) {
                     res.status(200).send({
                         message: "Vendedor eliminado exitosamente"

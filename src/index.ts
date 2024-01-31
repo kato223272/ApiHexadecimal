@@ -4,9 +4,16 @@ import {vendedorRouter} from "./Vendedor/Infraestructura/VendedorRoutes";
 import {ProductoRouter} from "./Producto/Infraestructura/Producto.routes"
 import {InicializarBaseDatos} from "./Conexion/Base";
 
+const options ={
+    secrets:["([0-9]{4}-?)+"]
+}
 
+
+let example = express();
+example.disable("x-powered-by");
+
+const logger = new Signale(options);
 const app = express();
-const signale = new Signale();
 
 
 app.use(express.json());
@@ -17,10 +24,10 @@ async function iniciarServidor(){
     try {
         await InicializarBaseDatos();
         app.listen(3000, ()=>{
-            signale.success("Servidor corriendo en el puerto 3000");
+            logger.success("Servidor corriendo en el puerto 3000");
         })
     } catch (error) {
-        signale.error("Error al iniciar el servidor", error);
+        logger.error("Error al iniciar el servidor", error);
     }
 }
 

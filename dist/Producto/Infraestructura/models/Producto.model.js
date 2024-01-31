@@ -14,19 +14,19 @@ __decorate([
         type: sequelize_typescript_1.DataType.INTEGER,
         primaryKey: true
     })
-], Producto.prototype, "id_producto", void 0);
+], Producto.prototype, "id_Producto", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
         primaryKey: false
     })
-], Producto.prototype, "nombre_producto", void 0);
+], Producto.prototype, "nombre_Producto", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.FLOAT,
         primaryKey: false
     })
-], Producto.prototype, "precio_producto", void 0);
+], Producto.prototype, "precio_Producto", void 0);
 Producto = __decorate([
     (0, sequelize_typescript_1.Table)({
         tableName: "producto",

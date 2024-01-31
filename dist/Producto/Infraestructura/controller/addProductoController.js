@@ -19,16 +19,16 @@ class AddProductoController {
             try {
                 let id_Producto = req.body.id_Producto;
                 let nombre_Producto = req.body.nombre_Producto;
-                let numeroTel_Producto = req.body.numeroTel_Producto;
+                let precio_Producto = req.body.precio_Producto;
                 console.log(req.body);
-                let ProductoCreado = yield this.addProductoCaseUse.run(id_Producto, nombre_Producto, numeroTel_Producto);
+                let ProductoCreado = yield this.addProductoCaseUse.run(id_Producto, nombre_Producto, precio_Producto);
                 if (ProductoCreado) {
                     return res.status(200).send({
                         status: "sucess",
                         data: {
-                            id_Producto: ProductoCreado.id_producto,
-                            nombre_Producto: ProductoCreado.nombre_producto,
-                            numeroTel_Producto: ProductoCreado.precio_producto
+                            id_Producto: ProductoCreado.id_Producto,
+                            nombre_Producto: ProductoCreado.nombre_Producto,
+                            precio_Producto: ProductoCreado.precio_Producto
                         },
                         message: "Se ha gusradado exitosamente el Producto"
                     });

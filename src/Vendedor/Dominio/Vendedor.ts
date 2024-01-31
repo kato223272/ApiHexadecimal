@@ -1,4 +1,5 @@
 export class Vendedor {
+    
     constructor ( 
         readonly id_Vendedor: number,
         readonly nombre_vendedor: string,

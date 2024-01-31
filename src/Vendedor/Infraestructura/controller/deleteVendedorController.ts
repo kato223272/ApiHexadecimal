@@ -5,10 +5,10 @@ export class DeleteVendedorController{
     constructor(readonly deleteVendedorCaseUse:DeleteVendedorCaseUse){}
     async run(req:Request, res:Response){
         try {
-            let id_vendedor = req.body.id_vendedor;
+            let id_Vendedor = req.body.id_Vendedor;
             console.log(req.body);
 
-            let vendedorEliminado = await this.deleteVendedorCaseUse.run(id_vendedor);
+            let vendedorEliminado = await this.deleteVendedorCaseUse.run(id_Vendedor);
 
             if(vendedorEliminado){
                 res.status(200).send({

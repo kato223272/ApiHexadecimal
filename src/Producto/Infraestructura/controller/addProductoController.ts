@@ -17,9 +17,9 @@ export class AddProductoController{
         return res.status(200).send({
             status:"sucess",
             data:{
-                id_Producto: ProductoCreado.id_producto,
-                nombre_Producto: ProductoCreado.nombre_producto,
-                precio_Producto: ProductoCreado.precio_producto
+                id_Producto: ProductoCreado.id_Producto,
+                nombre_Producto: ProductoCreado.nombre_Producto,
+                precio_Producto: ProductoCreado.precio_Producto
             },
             message: "Se ha gusradado exitosamente el Producto"
         })
